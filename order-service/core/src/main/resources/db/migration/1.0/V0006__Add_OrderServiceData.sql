@@ -1,4 +1,4 @@
-INSERT INTO Item(id, ModificationCounter, name, description, price) VALUES (21, 0, 'spaghetti bolognese', 'Italy', 250);
+INSERT INTO Item(id, ModificationCounter, name, description, price) VALUES (21, 0, 'spaghetti carbonara', 'Italy', 250);
 INSERT INTO Item(id, ModificationCounter, name, description, price) VALUES (22, 0, 'pizza margherita', 'Italy', 200);
 INSERT INTO Item(id, ModificationCounter, name, description, price) VALUES (23, 0, 'tacos', 'Mexico', 50);
 INSERT INTO Item(id, ModificationCounter, name, description, price) VALUES (24, 0, 'fish and chips', 'UK', 300);
