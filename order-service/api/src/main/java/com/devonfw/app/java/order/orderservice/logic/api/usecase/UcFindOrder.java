@@ -7,6 +7,7 @@ import java.util.Set;
 import org.springframework.data.domain.Page;
 
 import com.devonfw.app.java.order.orderservice.common.api.OrderStatus;
+import com.devonfw.app.java.order.orderservice.logic.api.to.OrderCto;
 import com.devonfw.app.java.order.orderservice.logic.api.to.OrderEto;
 import com.devonfw.app.java.order.orderservice.logic.api.to.OrderSearchCriteriaTo;
 
@@ -26,7 +27,7 @@ public interface UcFindOrder {
    * @param criteria the {@link OrderSearchCriteriaTo}.
    * @return the {@link List} of matching {@link OrderEto}s.
    */
-  Page<OrderEto> findOrders(OrderSearchCriteriaTo criteria);
+  Page<OrderCto> findOrders(OrderSearchCriteriaTo criteria);
 
   /**
    * @param creationDate

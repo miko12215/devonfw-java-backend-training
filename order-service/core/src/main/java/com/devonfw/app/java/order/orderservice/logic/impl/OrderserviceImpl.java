@@ -104,7 +104,7 @@ public class OrderserviceImpl extends AbstractComponentFacade implements Orderse
   }
 
   @Override
-  public Page<OrderEto> findOrders(OrderSearchCriteriaTo criteria) {
+  public Page<OrderCto> findOrders(OrderSearchCriteriaTo criteria) {
 
     return this.ucFindOrder.findOrders(criteria);
   }
