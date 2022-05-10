@@ -2,6 +2,7 @@ package com.devonfw.app.java.order.general.service.impl.config;
 
 import javax.inject.Inject;
 import javax.servlet.Filter;
+import javax.sql.DataSource;
 
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -36,6 +37,9 @@ public abstract class BaseWebSecurityConfig extends WebSecurityConfigurerAdapter
 
   @Inject
   private WebSecurityConfigurer webSecurityConfigurer;
+
+  @Inject
+  private DataSource dataSource;
 
   /**
    * Configure spring security to enable a simple webform-login + a simple rest login.
@@ -113,7 +117,19 @@ public abstract class BaseWebSecurityConfig extends WebSecurityConfigurerAdapter
   @Inject
   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
-    auth.inMemoryAuthentication().withUser("admin").password(this.passwordEncoder.encode("admin")).authorities("Admin");
+    // base exercise
+    auth.inMemoryAuthentication()
+      .withUser("admin").password(this.passwordEncoder.encode("admin")).authorities("Admin").and()
+      .withUser("waiter").password(this.passwordEncoder.encode("waiter")).authorities("Waiter").and()
+      .withUser("cook").password(this.passwordEncoder.encode("cook")).authorities("Cook").and()
+      .withUser("barkeeper").password(this.passwordEncoder.encode("barkeeper")).authorities("Barkeeper").and()
+      .withUser("chief").password(this.passwordEncoder.encode("chief")).authorities("Chief");
+
+    // additional
+//    auth.jdbcAuthentication().dataSource(dataSource)
+//      .usersByUsernameQuery("select username, password, enabled from users where username=?")
+//      .authoritiesByUsernameQuery("select username, authority from authorities where username=?")
+//      .passwordEncoder(passwordEncoder);
   }
 
 }
