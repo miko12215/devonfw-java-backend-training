@@ -2,17 +2,16 @@ package com.devonfw.app.java.order.general.service.base.test;
 
 import javax.inject.Inject;
 
-import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.web.server.LocalServerPort;
 
 import com.devonfw.app.java.order.SpringBootApp;
 import com.devonfw.app.java.order.general.common.base.test.DbTestHelper;
 import com.devonfw.app.java.order.general.common.base.test.TestUtil;
-
-import com.devonfw.module.test.common.base.SubsystemTest;
-import com.devonfw.module.test.common.base.SubsystemDbTest;
 import com.devonfw.module.service.common.api.client.ServiceClientFactory;
+import com.devonfw.module.test.common.base.SubsystemDbTest;
+import com.devonfw.module.test.common.base.SubsystemTest;
 
 /**
  * Abstract base class for {@link SubsystemTest}s which runs the tests within a local server. <br/>
@@ -54,7 +53,6 @@ public abstract class RestServiceTest extends SubsystemDbTest {
 
     return this.dbTestHelper;
   }
-
 
   /**
    * @return the {@link ServiceClientFactory}

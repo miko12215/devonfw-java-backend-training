@@ -45,6 +45,10 @@
     -->
     <!-- Starter for synchronous consuming REST services via Jaca HTTP Client (Java11+)
       NOTE: As an alternative you can also use devon4j-starter-cxf-client-rest with Apache CXF (Java8+) -->
+    <dependency>
+      <groupId>com.devonfw.java.starters</groupId>
+      <artifactId>devon4j-starter-cxf-client-rest</artifactId>
+    </dependency>
     <!--
     <dependency>
       <groupId>com.devonfw.java.starters</groupId>
@@ -139,7 +143,7 @@
             <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
           </dependency>
-    
+
     <!-- Flyway for DB Schema version management and migration -->
     <dependency>
       <groupId>org.flywaydb</groupId>
